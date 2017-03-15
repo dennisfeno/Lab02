@@ -1,7 +1,6 @@
-package it.polito.tdp.alien;
+/*package it.polito.tdp.alien;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class AlienController {
+public class AlienControllerPunto1 {
 
     @FXML
     private ResourceBundle resources;
@@ -43,7 +42,7 @@ public class AlienController {
     void doTranslate(ActionEvent event) {
     	
     	String s = txtWord.getText();
-    	List<String> traduzione= null;
+    	String traduzione= null;
     	//così " dovrebbe " funzionare 
     	
     	//txtResult.appendText(s.matches("[a-zA-Z]*")+": parola\n");    	
@@ -54,55 +53,11 @@ public class AlienController {
     		traduzione=dictionary.translateWord(s);
     		
     		if(traduzione!=null){
-    			
-	    		txtResult.appendText(String.format("La traduzione di %s è ",s));
-    			
-    	    	for(String p: traduzione)    			
-    	    		txtResult.appendText(String.format("%s      ",p));
-    	    	
-    	    	txtResult.appendText(".\n");
+        		txtResult.appendText(String.format("La traduzione di %s è %s.\n",s,traduzione));
     		}
     		else{
         		txtResult.appendText("Parola non trovata.\n");
     		}
-    		
-    	}
-    	else if(s.matches("[a-zA-Z?]*")){ // wildcard
-    		
-    		//txtResult.appendText("C'è un punto di domanda.\n");
-    		
-    		int len = s.length();
-    		int count = 0;
-    		List<String> stamp = null;
-    		
-    		for(int i=0; i<len ; i++){
-    			if(s.charAt(i)=='?')
-    				count++;
-    		}
-    		
-    		if(count==1){
-    			//txtResult.appendText("Ok.\n");
-    			stamp=dictionary.wildCard(s);
-    			
-    			if(stamp!=null){
-    				for(String vedi: stamp){ // per ogni parola della lista
-    		    		traduzione=dictionary.translateWord(vedi);
-    		    		    		    			
-    			    		txtResult.appendText(String.format("La traduzione di %s è ",vedi));
-    		    			
-    		    	    	for(String p: traduzione)    			
-    		    	    		txtResult.appendText(String.format("%s      ",p));
-    		    	    	
-    		    	    	txtResult.appendText(".\n");
-    		    		}
-    			}
-    			else{
-        			txtResult.appendText("Nessuna corrispondenza trovata.\n");
-    			}
-    		}
-    		else
-    			txtResult.appendText("Ricerca assistita non disponibile.\n");
-
     		
     	}
     	else if(s.matches("[a-zA-Z]*[' '][a-zA-Z]*")){ //add translation
@@ -111,7 +66,7 @@ public class AlienController {
     		Boolean present=dictionary.addWord(divido[0], divido[1]);
     		
     		if(present)
-        		txtResult.appendText("Traduzione aggiunta.\n");
+        		txtResult.appendText("Traduzione aggiornata.\n");
     		else
     			txtResult.appendText("Parola aggiunta.\n");
     	}
@@ -133,3 +88,4 @@ public class AlienController {
         
     }
 }
+*/
